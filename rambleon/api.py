@@ -85,6 +85,9 @@ class UpdateCampResource(ModelResource):
 		list_allowed_methods=['post',]
 		always_return_data = True
 
+	def dehydrate(self, bundle):
+		return getHandlers.dehydrateCamp(bundle=bundle)
+
 	def obj_create(self, bundle, request=None, **kwargs):
 		if(sanitizeInput):
 			bundle = postHandlers.sanitizeInput(bundle)
