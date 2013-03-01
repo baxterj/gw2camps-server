@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'rambleon',                      # Or path to database file if using sqlite3.
+        'NAME': 'gw2camps',                      # Or path to database file if using sqlite3.
         'USER': 'james',                      # Not used with sqlite3.
         'PASSWORD': 'jamesisgod',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -31,11 +31,11 @@ DATABASES = {
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 
-EMAIL_USE_TLS = False
-EMAIL_HOST = 'mail.rambleonline.com'
-EMAIL_PORT = 26
-EMAIL_HOST_USER = 'support@rambleonline.com'
-EMAIL_HOST_PASSWORD = 'jamesisgod!!'
+# EMAIL_USE_TLS = False
+# EMAIL_HOST = 'mail.rambleonline.com'
+# EMAIL_PORT = 26
+# EMAIL_HOST_USER = 'support@rambleonline.com'
+# EMAIL_HOST_PASSWORD = 'jamesisgod!!'
 
 
 # Local time zone for this installation. Choices can be found here:

@@ -1,6 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response, get_object_or_404
-from rambleon.models import Route, PathPoint
+from rambleon.models import *
 from django.template import Context, loader
 from django.core import serializers
 from django.http import HttpResponseServerError
@@ -23,7 +23,7 @@ def route(request, route_id):
 # 	return render_to_response('rambleon/register.html')
 
 # def test(request):
-	# return render_to_response('rambleon/register.html')
+#	return render_to_response('rambleon/testUpdateCamp.html')
 
 # def custom500view(request):
 # 	t = loader.get_template('500.html')

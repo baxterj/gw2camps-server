@@ -1,4 +1,4 @@
-from models import User, ApiKeys
+from models import *
 from django.http import Http404
 import random
 import hashlib

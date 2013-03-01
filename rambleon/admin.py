@@ -1,72 +1,27 @@
 from rambleon.models import *
 from django.contrib import admin
 
-class PointInline(admin.TabularInline):
-	model = PathPoint
-	extra = 1
+class BorderlandInline(admin.TabularInline):
+	model = Borderland
+	extra = 0
 
-class RouteKeywordInline(admin.TabularInline):
-	model = HasKeyword
-	extra = 1
+class SessionAdmin(admin.ModelAdmin):
+	list_display=('key', 'activeSince')
+	inlines=[BorderlandInline]
 
-class RoutesAdmin(admin.ModelAdmin):
-	inlines = [PointInline, RouteKeywordInline]
-	list_display = ('name', 'user', 'creation_date', 'update_date')
+admin.site.register(Session, SessionAdmin)
 
-admin.site.register(Route, RoutesAdmin)
+class CampInline(admin.TabularInline):
+	model = Camp
+	extra = 0
 
-class UserFaveInline(admin.TabularInline):
-	model = Favourite
-	#model = Route.favourites.through
-	extra = 1
+class BorderlandAdmin(admin.ModelAdmin):
+	list_display=('session', 'name', 'server')
+	inlines=[CampInline]
 
-class UserDoneInline(admin.TabularInline):
-	model = DoneIt
-	extra = 1
+admin.site.register(Borderland, BorderlandAdmin)
 
-class UserAdmin(admin.ModelAdmin):
-	inlines = [UserFaveInline, UserDoneInline]
-	list_display = ('username', 'email', 'pwHash', 'lastLogin', 'regDate')
-	readonly_fields = ('regDate',)
+class CampAdmin(admin.ModelAdmin):
+	list_display=('borderland', 'name', 'color', 'lastChanged', 'lastUpdate')
 
-admin.site.register(User, UserAdmin)
-
-class KeywordAdmin(admin.ModelAdmin):
-	list_display = ('keyword',)
-
-admin.site.register(Keyword, KeywordAdmin)
-
-class NoteAdmin(admin.ModelAdmin):
-	list_display = ('user', 'lat', 'lng', 'private', 'title')
-
-admin.site.register(Note, NoteAdmin)
-
-class ImageAdmin(admin.ModelAdmin):
-	list_display = ('user', 'title', 'private', 'text')
-
-admin.site.register(Image, ImageAdmin)
-
-class SpeedTrackDataAdmin(admin.ModelAdmin):
-	list_display = ('user', 'dateRecorded', 'speed', 'altitude')
-
-admin.site.register(SpeedTrackData, SpeedTrackDataAdmin)
-
-class ApiKeysAdmin(admin.ModelAdmin):
-	list_display = ('user', 'key')
-
-admin.site.register(ApiKeys, ApiKeysAdmin)
-
-class FavouriteAdmin(admin.ModelAdmin):
-	list_display=('user', 'route', 'date')
-
-admin.site.register(Favourite, FavouriteAdmin)
-
-class DoneItAdmin(admin.ModelAdmin):
-	list_display=('user', 'route', 'date')
-
-admin.site.register(DoneIt, DoneItAdmin)
-
-class AuthLinkCodeAdmin(admin.ModelAdmin):
-	list_display=('user', 'code')
-
-admin.site.register(AuthLinkCode, AuthLinkCodeAdmin)
+admin.site.register(Camp, CampAdmin)

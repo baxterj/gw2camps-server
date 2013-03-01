@@ -9,3 +9,4 @@ python-dateutil==1.5
 gunicorn==0.16.1
 psycopg2
 newrelic
+pytz
