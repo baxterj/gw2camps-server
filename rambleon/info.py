@@ -1,4 +1,4 @@
-greenCamps = ['titanpaw', 'foghaven', 'faithleap', 'bluevale', 'redwater', 'heros']
-redCamps = ['godsword', 'astralholme', 'arahs', 'greenvale', 'bluewater', 'victors']
-blueCamps = ['spiritholme', 'stargrove', 'godslore', 'redvale', 'greenwater', 'champions']
-ebCamps = ['speldan', 'pangloss', 'umberglade', 'rogues', 'golanta', 'danelon']
+greenCamps = ['Titanpaw', 'Foghaven', 'Faithleap', 'Bluevale', 'Redwater', 'Heros']
+redCamps = ['Godsword', 'Astralholme', 'Arahs', 'Greenvale', 'Bluewater', 'Victors']
+blueCamps = ['Spiritholme', 'Stargrove', 'Godslore', 'Redvale', 'Greenwater', 'Champions']
+ebCamps = ['Speldan', 'Pangloss', 'Umberglade', 'Rogues', 'Golanta', 'Danelon']

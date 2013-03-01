@@ -48,7 +48,9 @@ class SessionResource(ModelResource):
 
 
 class BorderlandResource(ModelResource):
-	camps = fields.ToManyField('rambleon.api.CampResource', 'camps', full=True)
+	#camps = fields.ToManyField('rambleon.api.CampResource', 'camps', full=True)
+	camps = fields.ToManyField('rambleon.api.CampResource', full=True,
+		attribute=lambda bundle: bundle.obj.camps.all().order_by('id'))
 	class Meta:
 		queryset = Borderland.objects.all()
 		resource_name ='borderland'
