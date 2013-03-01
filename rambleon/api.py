@@ -83,6 +83,7 @@ class UpdateCampResource(ModelResource):
 		authentication = Authentication()
 		authorization = MyUserAuthorization()
 		list_allowed_methods=['post',]
+		always_return_data = True
 
 	def obj_create(self, bundle, request=None, **kwargs):
 		if(sanitizeInput):
