@@ -28,7 +28,7 @@ DATABASES = {
 }
 
 #comment this line for local testing, remember to uncomment for heroku
-#DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 
 # EMAIL_USE_TLS = False
