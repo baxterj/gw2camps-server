@@ -35,8 +35,8 @@ class SessionResource(ModelResource):
 		list_allowed_methods = ['get', 'post',]
 		always_return_data = True
 
-	# def dehydrate(self, bundle):
-		# return getHandlers.escapeBundle(getHandlers.dehydrateSession(bundle=bundle))
+	def dehydrate(self, bundle):
+		return getHandlers.dehydrateSession(bundle=bundle)
 
 	def obj_create(self, bundle, request=None, **kwargs):
 		if(sanitizeInput):
@@ -73,8 +73,8 @@ class CampResource(ModelResource):
 		list_allowed_methods = ['get',]
 		always_return_data = True
 
-	# def dehydrate(self, bundle):
-	# 	return getHandlers.escapeBundle(getHandlers.dehydrateCamp(bundle=bundle))
+	def dehydrate(self, bundle):
+	 	return getHandlers.dehydrateCamp(bundle=bundle)
 
 class UpdateCampResource(ModelResource):
 	class Meta:
